@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { ClientModule } from './client/client.module';
 import { CarrierModule } from './carrier/carrier.module';
 import { ServiceModule } from './service/service.module';
@@ -18,18 +18,22 @@ import { PaymentModule } from './payment/payment.module';
       isGlobal: true,
       load: [config],
     }),
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) =>
-        configService.get('database'),
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      entities: ['dist/**/*.entity.js'],
+      synchronize: false,
+      host: 'sql11.freesqldatabase.com',
+      port: 3306,
+      database: 'sql11680539',
+      username: 'sql11680539',
+      password: '343XmK8pZR',
     }),
     UserModule,
     ClientModule,
     CarrierModule,
     ServiceModule,
     VehicleModule,
-    PaymentModule, //Faltaba el modulo payment
+    PaymentModule,
     AuthModule],
   controllers: [AppController],
   providers: [AppService],
