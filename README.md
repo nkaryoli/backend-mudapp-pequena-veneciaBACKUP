@@ -1,4 +1,4 @@
-## MUDApp: The Moving App
+# MUDApp: The Moving App
 ![](https://imgur.com/MiDuWQ5.png)
 
 MUDApp is a web application designed to revolutionize the moving and parcel transportation industry. Inspired by platforms like Uber, MUDApp connects users who need to transport goods with transporters who have the appropriate vehicles for the job. This project was developed as part of the Factoria F5 bootcamp, fulfilling all the requirements outlined in the project brief.
@@ -120,7 +120,7 @@ The API is documented using Swagger (OpenAPI). To access the documentation:
 - Run the server.
 - Visit http://localhost:3000/api-docs in your browser.
 
-# Team
+## Team
 This project was developed by the following Factoria F5 students:
 
 - Karyoli Nieves
@@ -128,7 +128,7 @@ This project was developed by the following Factoria F5 students:
 - Isadora Matias
 - Jose Perez
 
-# License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Thank you for checking out MUDApp! We hope it makes moving and transportation easier for everyone. 🚚✨
