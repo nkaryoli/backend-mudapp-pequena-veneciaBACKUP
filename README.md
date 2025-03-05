@@ -1,127 +1,134 @@
+## MUDApp: The Moving App
 ![](https://imgur.com/MiDuWQ5.png)
-# MUDApp: : La app de las mudanzas. Paso 2 Diseño y Desarrollo del backend (APIRest)
 
+MUDApp is a web application designed to revolutionize the moving and parcel transportation industry. Inspired by platforms like Uber, MUDApp connects users who need to transport goods with transporters who have the appropriate vehicles for the job. This project was developed as part of the Factoria F5 bootcamp, fulfilling all the requirements outlined in the project brief.
 
-## Introducción
+---
 
-Una start-up de nueva creación ha solicitado una aplicación para dinamizar el mundo de las mudanzas y del transporte de paquetería en general.
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Functional Requirements](#functional-requirements)
+4. [Technical Requirements](#technical-requirements)
+5. [Technologies Used](#technologies-used)
+6. [Installation](#installation)
+7. [API Documentation](#api-documentation)
+8. [Team](#team)
+9. [License](#license)
 
-La aplicación tiene cierta semejanza con la aplicación de UBER y, su objetivo principal es poner en contacto a personas con necesidades de transporte de bienes con transportistas que tengan un vehículo de las características adecuadas a esas necesidades.
+---
 
-Enhorabuena equipo, habéis empezado a desarrollar nuestra aplicación web y estamos bastante satisfechos del trabajo realizado con la base de datos. Ahora nos gustaría que abordaseis la parte del backend de nuestra aplicación.
+## Introduction
 
-Hemos seguido analizando los requerimientos que queremos tener en nuestra aplicación y os los detallamos a continuación:
+MUDApp is a RESTful API backend developed for a startup aiming to streamline the moving and parcel transportation industry. The application connects clients who need transportation services with transporters who have the appropriate vehicles. This project was developed in two sprints, each lasting one week, and meets all the functional and technical requirements outlined by the client.
 
-## Requerimientos funcionales
+---
 
-<details>
-  <summary><b>Usuaria-Cliente (en adelante Cliente) no registrada</b></summary>
+## Features
 
-  - Puede registrarse
-  - Puede realizar búsquedas por condiciones: Localidad, Destino, nº paquetes, tamaño máximo del paquete, fecha del transporte.
+- **User Roles**:
+  - Unregistered Client
+  - Registered Client
+  - Unregistered Transporter
+  - Registered Transporter
+  - Application Administrator
+  - System
 
-  </details>
-  <details>
-  <summary><b>Cliente registrada</b></summary>
+- **Core Functionality**:
+  - Clients can request transportation services.
+  - Transporters can offer their services and manage orders.
+  - Administrators can manage users and monitor system activity.
 
-  - Puede logarse
-  - Puede recuperar la contraseña
-  - Puede realizar búsquedas por condiciones: Localidad, Destino, nº paquetes, tamaño máximo del paquete, fecha del transporte.
-  - Puede actualizar su perfil de usuaria (menos nombre, email)
-  - Puede seleccionar un transportista de una lista
-  - Puede contratar el servicio de un transportista
-  - Puede pagar el servicio
-  - Puede cancelar un servicio si todavía no lo ha pagado
-  - Puede ver el detalle del servicio contratado
-  - Puede valorar el servicio realizado
-  - Puede comentar el servicio realizado (sólo 1 vez)
-  - Puede enviar un mensaje a un transportista contratado.
-  - Puede visualizar mensajes de un transportista contratado
+---
 
-  </details>
-<details>
-  <summary><b>Usuaria-Proveedor de transporte (en adelante Transportista) no registrada</b></summary>
+## Functional Requirements
 
-  - Puede registrarse
+The application supports the following user roles and functionalities:
 
-  </details>
-  <details>
-  <summary><b>Transportista registrada</b></summary>
+1. **Unregistered Client**:
+   - Browse transportation services.
+   - Register as a client.
 
-  - Puede logarse
-  - Puede recuperar la contraseña
-  - Puede dar de alta un vehículo
-  - Puede modificar los datos de un vehículo
-  - Puede eliminar los datos de un vehículo
-  - Puede actualizar su perfil de usuaria (menos nombre, email). Puede cambiar su estado a NO DISPONIBLE.
-  - Puede ver el detalle del servicio contratado
-  - Puede enviar un mensaje a un cliente.
-  - Puede visualizar mensajes de un cliente.
-  - Pueden ver la lista de condiciones del servicio.
+2. **Registered Client**:
+   - Request transportation services.
+   - Track ongoing orders.
+   - Manage profile and payment information.
 
-  </details>
+3. **Unregistered Transporter**:
+   - Browse available jobs.
+   - Register as a transporter.
 
-  <details>
-  <summary><b>Administradora de la aplicación</b></summary>
+4. **Registered Transporter**:
+   - Accept or reject transportation requests.
+   - Manage ongoing orders.
+   - Update vehicle and profile information.
 
-  - Puede visualizar la lista de clientes y transportistas
-  - Puede realizar búsquedas por palabras claves.
-  - Puede editar la lista de condiciones del servicio de transporte.
-  - Puede editar o borrar un cliente
-  - Puede editar o borrar un transportista
-  - Puede editar o borrar un servicio
-  - Notifica a los transportistas valorados que van a recibir un pago.
+5. **Administrator**:
+   - Manage users (clients and transporters).
+   - Monitor system activity and resolve issues.
 
+6. **System**:
+   - Handle notifications and emails.
+   - Manage payment processing.
 
-  </details>
+---
 
-  <details>
-  <summary><b>Sistema</b></summary>
+## Technical Requirements
 
-  - Filtra la lista de transportistas por el check de disponibilidad
-  - Modifica la disponibilidad de un transportista cuando se ha recibido el pago de un servicio.
-  - Modifica la disponibilidad de un transportista cuando se ha finalizado un servicio.
-  - Modifica la disponibilidad e un transportista si se ha cancelado un servicio.
-  - Notifica al cliente que tiene que valorar un servicio cuando se ha realizado.
-  - Ajusta la valoración del transportista con cada valoración de un cliente.
+The project meets the following technical requirements:
 
-  </details>
+- **Linting**: ESLint and Prettier were used to ensure code quality and consistency.
+- **Testing**: Unit tests and integration tests were implemented for all endpoints.
+- **API Documentation**: OpenAPI (Swagger) was used to document the API.
+- **Deployment**: The application was deployed to a production environment.
 
-## Requerimientos Técnicos
+---
 
-  - Incluir Linting
-  - Incluir testing unitario y testing de integración de todos los endpoints
-  - Incluir documentación con OpenAPI ([Swagger](https://swagger.io/tools/open-source/getting-started/))
-  - Desplegar en producción
+## Technologies Used
 
-BONUS-TRACK
-  - Dockerizar API y BBDD
-  - Desplegar mediante CI/CD con GitHub Actions
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **API Documentation**: Swagger (OpenAPI)
+- **Linting**: ESLint, Prettier
 
-## Modalidad Pedagógica
-  - Proyecto grupal
-  - Desarrollo en 2 sprints, 1 semana de duración cada uno
-  - Fecha de presentación: 5/2/2023
+---
 
-## Evaluación
-  - Vía pull-request a través de Github-classromm
-  - Comentarios orales día de la presentación
-  - Autoevaluación
+## Installation
 
-## Entregables
-- Repositorio de GitHub que contenga la siguiente información:
-  - Readme con índice,contenido del repositorio, las tecnologías utilizadas, links a los recursos.
-  - Modelo lógico de la base de datos.
-  - Fichero de dump de la base de datos.
-  - Instrucciones de instalación de la aplicación
-  - Presentación
+To run the project locally, follow these steps:
 
-## Criterios de rendimiento
-  |  | 1 | 2 | 3 |
-| --- | --- | --- | --- |
-| Indicador | Deficiente | Regular | Excelente |
-| Trabajo en equipo | Ha habido problemas de comunicación, alguno de los miembros del equipo no ha participado en el desarrollo y/o no conoce el funcionamiento de la API. | Se ha trabajado de forma modular, pero no se ha trabajado de forma equitativa en cuanto a cantidad y complejidad del trabajo. Ha habido algún problema de comunicación | Se dividió la carga de trabajo por igual, los dos han contribuido al desarrollo del trabajo y conocen por igual todos los detalles del proyecto |
-| Documentación de la API | La documentación es incorrecta, omite servicios o estos no se corresponden con la implementación, no hay descripción de historias de usuario | La documentación es completa o faltan pocas especificaciones. Falta claridad en la descripción. Faltan historias de usuario y a las que hay les falta información | La documentación es clara y corresponde perfectamente a los servicios. Cuenta con descripciones detalladas y es intuitiva. Se describen las historias de usuario con tareas y criterios de aceptación asociados. |
-| Testing | El porcentaje de cobertura de los tests no supera el 50% | El % de cobertura es inferior al 80% | El % de cobertura es superior al 80% |
-| Implementación de la API | Hay requerimientos que no se resolvieron o su solución es incorrecta. El código es confuso y carece de buenas prácticas. Falta el desarrollo de muchos servicios o éstos son incorrectos. Las consultas a la bbdd son muy ineficientes, lo cual aumenta el tiempo de respuesta. El comportamiento de los endpoints no es el esperado. | Se resuelven satisfactoriamente los requerimientos especificados, pero el código podría mejorarse con buenas prácticas o limpieza. Sobra código o es redundante. | El código es limpio y está bien estructurado. Resuelve satisfactoriamente los requerimientos del proyecto. Se aplicaron buenas prácticas de programación: responsabilidad única, no es redundante y no mezcla capas de abstracción. Las conexiones a la bbbdd son eficientes. |
-| Comunicación del Proyecto | No quedan claros la motivación ni los requerimientos del proyecto. No es posible conocer la evolución del proyecto. La presentación es incompleta y carece de hilo conductor. No refleja para nada el trabajo realizado | Existe cierta calidad en la presentación aunque faltan apartados o estos no están claramente definidos. Existe cierto grado de confusión pero refleja el desarrollo | Las presentaciones están bien preparadas, se ajustan a los apartados requeridos y reflejan correctamente la evolución del proyecto. |
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/MUDApp-backend.git
+2. Navigate to the project directory:
+   ```bash
+   cd MUDApp-backend
+3. Install dependencies:
+   ```bash
+   pnpm install
+4. Set up environment variables:
+   - Create a .env file in the root directory.
+   - Add the required variables (e.g., MONGO_URI, JWT_SECRET).
+5. Start the server:
+   ```bash
+   pnpm start
+5. Access the API:
+   Visit http://localhost:3000 in your browser.
+
+## API Documentation
+The API is documented using Swagger (OpenAPI). To access the documentation:
+- Run the server.
+- Visit http://localhost:3000/api-docs in your browser.
+
+#Team
+This project was developed by the following Factoria F5 students:
+
+- Karyoli Nieves
+- Ana Maria Herrera
+- Isadora Matias
+- Jose Perez
+
+#License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Thank you for checking out MUDApp! We hope it makes moving and transportation easier for everyone. 🚚✨
