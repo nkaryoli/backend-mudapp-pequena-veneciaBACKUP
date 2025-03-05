@@ -120,7 +120,7 @@ The API is documented using Swagger (OpenAPI). To access the documentation:
 - Run the server.
 - Visit http://localhost:3000/api-docs in your browser.
 
-#Team
+# Team
 This project was developed by the following Factoria F5 students:
 
 - Karyoli Nieves
@@ -128,7 +128,7 @@ This project was developed by the following Factoria F5 students:
 - Isadora Matias
 - Jose Perez
 
-#License
+# License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Thank you for checking out MUDApp! We hope it makes moving and transportation easier for everyone. 🚚✨
